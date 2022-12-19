@@ -3,6 +3,7 @@ package com.form;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -28,6 +29,8 @@ public class Register extends HttpServlet {
 		   String cond = req.getParameter("conditions");
 		   
 		   
+		 if(cond!= null) {
+		   
 		   if(cond.equals("checked")) {
 			   
 			   
@@ -43,14 +46,37 @@ public class Register extends HttpServlet {
 				  pw.println("<h2>Your email is : "+ email+"<h2>");
 				  pw.println("<h2>Your course is "+ course+"<h2>");
 				  pw.println("<h2>You are a "+ gender+"<h2>");
+				  
+				  
+				  RequestDispatcher rd = req.getRequestDispatcher("Success");
+				  rd.forward(req, resp);
 				 
-			   
+		   }
 		   
-		   
+				  else {
+					  pw.println("<h1>You have not accepted Tnc</h1>");
+				  }
 		  
 		
 	
-	}
+	
+		   
+		   }
+		 
+		 else {
+			   pw.println("<h1>You have not accepted Tnc</h1>");
+			   
+			   //RequestDispatcher methods 
+			   
+			   RequestDispatcher rd = req.getRequestDispatcher("index.html");
+			   
+			   //include method : calls the index.html page via include method
+			   rd.include(req, resp);
+			   
+			   
+			   
+			   
+			   }
 	}
 	
 }

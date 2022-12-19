@@ -23,6 +23,11 @@
       <servlet-class>com.form.Register</servlet-class>
   </servlet>
   
+  <servlet>
+     <servlet-name>successServlet</servlet-name>
+      <servlet-class>com.form.SuccesServlet</servlet-class>
+  </servlet>
+  
   
 
   <servlet-mapping>
@@ -30,6 +35,9 @@
           <url-pattern>/RegisterServlet</url-pattern>     
   </servlet-mapping>
 
-
+<servlet-mapping>
+         <servlet-name>successServlet</servlet-name>
+          <url-pattern>/Success</url-pattern>     
+  </servlet-mapping>
   
 </web-app>
