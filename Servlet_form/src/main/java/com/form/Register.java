@@ -20,15 +20,19 @@ public class Register extends HttpServlet {
 		
 		pw.println("<h2>Welcome to the Register Servlet");
 		
-		 String name = req.getParameter("user_name");
-		   String password = req.getParameter("user_password");
-		   String email = req.getParameter("user_email");
-		 
-		   String gender = req.getParameter("user_gender");
-		   String course = req.getParameter("user_course");
-		   String cond = req.getParameter("conditions");
-		   
-		   
+		//getPArameter method links index.html page with each of the data's url
+		
+		/*
+		 * String name = req.getParameter("user_name"); String password =
+		 * req.getParameter("user_password"); String email =
+		 * req.getParameter("user_email");
+		 * 
+		 * String gender = req.getParameter("user_gender"); String course =
+		 * req.getParameter("user_course"); String cond =
+		 * req.getParameter("conditions");
+		 */
+		String cond =
+				 req.getParameter("conditions");
 		 if(cond!= null) {
 		   
 		   if(cond.equals("checked")) {
@@ -41,15 +45,18 @@ public class Register extends HttpServlet {
 			   pw.println(gender);*/
 				
 			   
-				  pw.println("<h2>Congratulations! "+ name+"<h2>");
-				  
-				  pw.println("<h2>Your email is : "+ email+"<h2>");
-				  pw.println("<h2>Your course is "+ course+"<h2>");
-				  pw.println("<h2>You are a "+ gender+"<h2>");
-				  
-				  
-				  RequestDispatcher rd = req.getRequestDispatcher("Success");
-				  rd.forward(req, resp);
+				/*
+				 * pw.println("<h2>Congratulations! "+ name+"<h2>");
+				 * 
+				 * pw.println("<h2>Your email is : "+ email+"<h2>");
+				 * pw.println("<h2>Your course is "+ course+"<h2>");
+				 * pw.println("<h2>You are a "+ gender+"<h2>");
+				 */
+				  //forward method : calls the SuccesServlet class and displays page via forward method
+					
+					  RequestDispatcher rd = req.getRequestDispatcher("Success"); rd.forward(req,
+					  resp);
+					 
 				 
 		   }
 		   

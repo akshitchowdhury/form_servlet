@@ -21,6 +21,23 @@ public class SuccesServlet extends HttpServlet {
 	   pw.println("<h1>Server flight test running</h1>");
 	   
 	   
+	   
+	   String name = req.getParameter("user_name");
+	   String password = req.getParameter("user_password");
+	   String email = req.getParameter("user_email");
+	 
+	   String gender = req.getParameter("user_gender");
+	   String course = req.getParameter("user_course");
+	   String cond = req.getParameter("conditions");
+	   
+	   
+	   pw.println("<h2>Congratulations! "+ name+"<h2>");
+		  
+		  pw.println("<h2>Your email is : "+ email+"<h2>");
+		  pw.println("<h2>Your course is "+ course+"<h2>");
+		  pw.println("<h2>You are a "+ gender+"<h2>");
+	   
+	   
 	  
 	}
 	
